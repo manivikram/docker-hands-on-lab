@@ -1,5 +1,3 @@
-# docker-hands-on-lab
-
 # Docker Hands-On Lab
 
 ## About This Repository
