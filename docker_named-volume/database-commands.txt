@@ -1,0 +1,15 @@
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    role VARCHAR(100) NOT NULL
+);
+
+INSERT INTO employees (name, role)
+VALUES
+('Mani Vikram','DevOps Engineer'),
+('Anita Rao','Cloud Engineer'),
+('Rahul Kumar','Site Reliability Engineer');
+
+SELECT * FROM employees;
+EOF
+

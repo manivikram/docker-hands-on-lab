@@ -1,0 +1,212 @@
+[
+    {
+        "Id": "b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b",
+        "Created": "2026-08-04T02:36:47.607241649Z",
+        "Path": "/app/health-app",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 64539,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-08-04T02:36:47.687013294Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:46ca9074c3e7785fec7c04b72e79cb508142581e64b0da6de98a01c19b57df36",
+        "ResolvConfPath": "/var/lib/docker/containers/b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b/hostname",
+        "HostsPath": "/var/lib/docker/containers/b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b/hosts",
+        "LogPath": "/var/lib/docker/containers/b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b/b085ca748bfc99ce09873b353bb297f777bcea9e028c998d9eea29c30872597b-json.log",
+        "Name": "/health-distroless",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8092"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                43,
+                185
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "b085ca748bfc",
+            "Domainname": "",
+            "User": "nonroot:nonroot",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "Cmd": null,
+            "Image": "distroless-health:distroless",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "/app/health-app"
+            ],
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "52b1917c0ad22b12c95812819acefd336cb9a5f5e88b98315051533f5a1e1563",
+            "SandboxKey": "/var/run/docker/netns/52b1917c0ad2",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8092"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8092"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "b8c6f41d202a42d5d6dfe901fc450a001d3d9a9e80dde7ea055351a1475e9b6e",
+                    "EndpointID": "502e41468c07a712c471e09331d7370470395fa3d0e4ba1e2ecbe4befb1b4bae",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.7",
+                    "MacAddress": "ba:c0:de:39:a0:e5",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:46ca9074c3e7785fec7c04b72e79cb508142581e64b0da6de98a01c19b57df36",
+            "size": 3328,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

@@ -1,0 +1,16 @@
+mkdir -p ~/docker-assignments/multistage-basic
+cd ~/docker-assignments/multistage-basic
+
+docker build -f Dockerfile.single-stage -t multistage-basic:single-stage .
+docker build -f Dockerfile -t multistage-basic:multi-stage .
+
+docker run --rm --name multistage-single-test multistage-basic:single-stage
+docker run --rm --name multistage-runtime-test multistage-basic:multi-stage
+
+docker images multistage-basic:single-stage multistage-basic:multi-stage
+
+docker history multistage-basic:single-stage
+docker history multistage-basic:multi-stage
+
+docker history -q multistage-basic:single-stage | wc -l
+docker history -q multistage-basic:multi-stage | wc -l

@@ -1,0 +1,31 @@
+Docker Named Volume Persistence Test
+
+Initial container
+-----------------
+Container name: postgres-primary
+Database: companydb
+Table: employees
+Records created: 3
+
+The original PostgreSQL container was stopped and removed.
+
+Replacement container
+---------------------
+Container name: postgres-replacement
+Named volume: postgres-data-volume
+
+The replacement container was started using the same named volume.
+
+Verification
+------------
+The employees table and all three original records were still present.
+
+Conclusion
+----------
+Deleting a container does not delete data stored in a named volume.
+
+A container is temporary and replaceable, while a named volume has an
+independent lifecycle.
+
+Deleting the named volume would permanently delete the PostgreSQL data stored
+in that volume.

@@ -1,0 +1,29 @@
+cd ~/docker-assignments
+mkdir -p distroless-app
+cd distroless-app
+
+docker build -f Dockerfile.regular -t distroless-health:regular .
+docker build -f Dockerfile -t distroless-health:distroless .
+
+docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.Size}}" | grep distroless-health
+
+docker run -d --name health-regular -p 8091:8080 distroless-health:regular
+docker run -d --name health-distroless -p 8092:8080 distroless-health:distroless
+
+curl http://localhost:8091/health
+curl http://localhost:8092/health
+
+docker exec -it health-regular /bin/sh
+docker exec -it health-distroless /bin/sh
+
+docker exec health-regular which apk
+docker exec health-distroless apk --version
+
+docker inspect health-regular
+docker inspect health-distroless
+
+docker image inspect distroless-health:regular --format 'Regular layers: {{len .RootFS.Layers}}'
+docker image inspect distroless-health:distroless --format 'Distroless layers: {{len .RootFS.Layers}}'
+
+docker history distroless-health:regular
+docker history distroless-health:distroless

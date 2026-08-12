@@ -1,0 +1,41 @@
+cd ~/docker-assignments
+mkdir -p docker_named-volume
+cd docker_named-volume
+
+docker volume create postgres-data-volume
+docker volume ls
+docker volume inspect postgres-data-volume
+
+docker run -d \
+  --name postgres-primary \
+  -e POSTGRES_USER=devopsuser \
+  -e POSTGRES_PASSWORD=DevOpsPass123 \
+  -e POSTGRES_DB=companydb \
+  -p 5433:5432 \
+  -v postgres-data-volume:/var/lib/postgresql/data \
+  postgres:16-alpine
+
+docker logs postgres-primary
+
+docker exec -it postgres-primary \
+  psql -U devopsuser -d companydb
+
+docker stop postgres-primary
+docker rm postgres-primary
+
+docker volume ls | grep postgres-data-volume
+
+docker run -d \
+  --name postgres-replacement \
+  -e POSTGRES_USER=devopsuser \
+  -e POSTGRES_PASSWORD=DevOpsPass123 \
+  -e POSTGRES_DB=companydb \
+  -p 5433:5432 \
+  -v postgres-data-volume:/var/lib/postgresql/data \
+  postgres:16-alpine
+
+docker exec -it postgres-replacement \
+  psql -U devopsuser -d companydb
+
+docker volume inspect postgres-data-volume
+sudo ls -la /var/lib/docker/volumes/postgres-data-volume/_data

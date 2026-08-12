@@ -1,0 +1,21 @@
+{
+echo "===== Single-stage Run ====="
+docker run --rm multistage-basic:single-stage
+
+echo
+echo "===== Multi-stage Run ====="
+docker run --rm multistage-basic:multi-stage
+
+echo
+echo "===== Image Sizes ====="
+docker image ls | grep multistage-basic
+
+echo
+echo "===== Single-stage History ====="
+docker history multistage-basic:single-stage
+
+echo
+echo "===== Multi-stage History ====="
+docker history multistage-basic:multi-stage
+
+} > build-output.txt
